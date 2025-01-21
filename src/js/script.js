@@ -1,92 +1,122 @@
-//first task
+// 1 task
 
-let a1 = 5 + 3;
-let a2 = 5 - 3;
-let a3 = 5 * 3;
-let a4 = 5 / 3;
-let a5 = 5 % 3;
+// const userAnswer = prompt("Яка “офіційна” назва JavaScript?");
 
-console.log(a1, a2, a3, a4, a5);
+// if (userAnswer === "ECMAScript") {
+//   alert("Правильно!");
+// } else {
+//   alert("Ви не знаєте? ECMAScript!");
+// }
 
-// second task
+// 2 task
 
-let a6 = 5 % 3;
-let a7 = 3 % 5;
-let a8 = "5" + 3;
-let a9 = "5" - 3;
-let a10 = 75 + "кг";
+// const userNum = Number(prompt("Введіть число:"));
 
-console.log(a6, a7, a8, a9, a10);
+// if (userNum > 0) {
+//   console.log("1");
+// } else if (userNum < 0) {
+//   console.log("-1");
+// } else {
+//   console.log("0");
+// }
 
-//third task
-let min = 1;
-let max = 100;
+// 3 task
 
-let randomNum = Math.random() * (max - min);
+let a = 1;
+let b = 4;
 
-console.log(randomNum);
+const result = a + b < 4 ? "-" : "+";
 
-// four task
+console.log(result);
 
-const firstNum = prompt("Введіть перше число:");
-const secondNum = prompt("Введіть друге число:");
+// 4 task
 
-let sum = Number.parseInt(firstNum) + Number.parseInt(secondNum);
+const x1 = 10;
+const x2 = 30;
+const number = 45;
 
-console.log(sum);
+if (number < x1) {
+  console.log("Менше х1");
+} else if (x1 < number && number < x2) {
+  console.log("Від х1 до х2");
+} else if (number < x1 || number > x2) {
+  console.log("До х1 або після х2");
+} else if (number > x1) {
+  console.log("Більше х1");
+}
 
-// creative task
+// 5 task
 
-let c1 = Number.parseInt("5px");
-let c2 = Number.parseInt("2djd334");
-let c3 = Number.parseInt("2.45asdwe12");
-let c4 = Number.parseInt("qwqweeewq");
+const isOnline = false;
+const isFriend = true;
+const isDnd = false;
 
-// second creative task
+if (isFriend === false) {
+  console.log(
+    "Ви не можете відкрити чат з цим користувачем, він має бути у вас в друзях"
+  );
+} else if (isOnline === false) {
+  console.log("Ви не можете відкрити чат з цим користувачем, він не в онлайн");
+} else if (isDnd === false) {
+  console.log(
+    "Ви не можете відкрити чат з цим користувачем, він в режимі не турбувати"
+  );
+} else {
+  console.log("Чат відкрито!");
+}
 
-let k1 = Number.parseFloat("5px");
-let k2 = Number.parseFloat("2djd334");
-let k3 = Number.parseFloat("2.45asdwe12");
-let k4 = Number.parseFloat("qwqweeewq");
+// 6 task
 
-//third creatie task
+const userSubscribe = 1;
 
-console.log(
-  Math.max(2, 34, 99, 3, 22, 36, 733, 18),
-  Math.min(2, 34, 99, 3, 22, 36, 733, 18)
+const defaultSubscribe = 0;
+const proSubscribe = 1;
+const vipSubscribe = 2;
+
+if (userSubscribe === 0) {
+  console.log(
+    "Щоб отримати доступ до контенту потрібно мати підписку PRO або VIP"
+  );
+} else {
+  console.log("Контент відкрито!");
+}
+
+// 7 task
+
+// let balance = Number(prompt("Введіть ваш баланс:"));
+// const payment = Number(prompt("Введіть суму покупки:"));
+// alert(
+//   `Загальна вартість замовлення ${payment} кредитів. Перевіряємо кількість доступних коштів на рахунку`
+// );
+
+// if (balance >= payment) {
+//   alert(`На рахунку залишилося ${balance - payment} кредитів`);
+// } else {
+//   alert("На рахунку недостатньо коштів для проведення операції!");
+// }
+// alert("Операція завершена");
+
+// 9 task
+
+const totalSpent = Number(prompt("Введіть загальну суму витрачених коштів"));
+const payment = Number(prompt("Введіть суму поточного платежу"));
+let discount;
+
+if (totalSpent > 100 && totalSpent + payment < 1000) {
+  discount = 2;
+  alert("бронзовий партнер, знижка 2%");
+} else if (totalSpent >= 1000 && totalSpent + payment < 5000) {
+  discount = 5;
+  alert(`срібний партнер, знижка 5%`);
+} else if (totalSpent >= 5000) {
+  discount = 10;
+  alert(`золотий партнер, знижка 10%`);
+} else {
+  alert("У вас ще немає партнерської знижки");
+}
+
+alert(
+  `Oформляємо замовлення на суму ${
+    totalSpent - (totalSpent * discount) / 100
+  } зі знижкою ${discount}%`
 );
-
-// four creative task
-let minNum = 3;
-let maxNum = 19;
-
-let random = Math.floor(Math.random() * maxNum) + minNum;
-
-console.log(random);
-
-// super-creative task
-
-let width = 10;
-let height = 23;
-
-let area = width * height;
-
-console.log(" Area of rectangle: " + area + " cm^2");
-
-// second super-creative task
-
-let diameter = 4;
-let cylinderHeight = 10;
-
-let cylinderAmount = Math.PI * diameter * cylinderHeight;
-
-console.log("Cylinder amount", cylinderAmount.toFixed(2), "cm^3");
-
-// third super-creative task
-
-let sideA = 3;
-let sideB = 4;
-
-let hypotenuse = Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
-
-console.log("Hypotenuse is", hypotenuse, "cm");
