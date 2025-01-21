@@ -102,21 +102,22 @@ const totalSpent = Number(prompt("Введіть загальну суму ви�
 const payment = Number(prompt("Введіть суму поточного платежу"));
 let discount;
 
-if (totalSpent > 100 && totalSpent + payment < 1000) {
+if (totalSpent > 100 && totalSpent < 1000) {
   discount = 2;
   alert("бронзовий партнер, знижка 2%");
-} else if (totalSpent >= 1000 && totalSpent + payment < 5000) {
+} else if (totalSpent >= 1000 && totalSpent < 5000) {
   discount = 5;
   alert(`срібний партнер, знижка 5%`);
 } else if (totalSpent >= 5000) {
   discount = 10;
   alert(`золотий партнер, знижка 10%`);
 } else {
+  discount = 0;
   alert("У вас ще немає партнерської знижки");
 }
 
 alert(
   `Oформляємо замовлення на суму ${
-    totalSpent - (totalSpent * discount) / 100
+    payment - (payment * discount) / 100
   } зі знижкою ${discount}%`
 );
