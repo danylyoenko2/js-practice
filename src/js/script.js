@@ -1,32 +1,21 @@
-// plus task 1
+// addit. task
 
-const numbers = [51, 18, 13, 24, 7, 85, 19];
-let smallestNumber = numbers[0];
-
-for (const num of numbers) {
-  if (smallestNumber > num) {
-    smallestNumber = num;
+const changeCase = function (string) {
+  let changeString = "";
+  for (const elem of string) {
+    changeString +=
+      elem === elem.toUpperCase() ? elem.toLowerCase() : elem.toUpperCase();
   }
-}
+  return changeString;
+};
 
-console.log(smallestNumber);
-// plus task 2
+console.log(changeCase("JavaScript"));
 
-const array1 = [5, 10, 15, 20];
-const array2 = [10, 20, 30];
-let sumOfArr1 = 0;
-let sumOfArr2 = 0;
+// 2 addit. task
 
-for (const num1 of array1) {
-  sumOfArr1 += num1;
-}
+const slugify = function (string) {
+  const slug = string.toLowerCase().split(" ").join("-");
+  return slug;
+};
 
-for (const num2 of array2) {
-  sumOfArr2 += num2;
-}
-
-console.log(
-  `Sum of first arr: ${sumOfArr1}, sum of second arr: ${sumOfArr2}, sum of first and second arr: ${
-    sumOfArr1 + sumOfArr2
-  }`
-);
+console.log(slugify("Top 10 benefits of React framework"));
