@@ -1,21 +1,29 @@
-// addit. task
+// additional task
 
-const changeCase = function (string) {
-  let changeString = "";
-  for (const elem of string) {
-    changeString +=
-      elem === elem.toUpperCase() ? elem.toLowerCase() : elem.toUpperCase();
-  }
-  return changeString;
+const processArray = (arr, callback) => {
+  const proccess = callback(arr);
+  return proccess;
 };
 
-console.log(changeCase("JavaScript"));
+const getAverage = (arr) =>
+  arr.reduce((acc, curr) => acc + curr, 0) / arr.length;
 
-// 2 addit. task
+const areAllEven = (arr) => arr.every((num) => num % 2 === 0);
 
-const slugify = function (string) {
-  const slug = string.toLowerCase().split(" ").join("-");
-  return slug;
+const isAnyGreaterThan = (arr, value) => arr.some((num) => num > value);
+
+console.log(processArray([2, 4, 6], getAverage)); // Виведе середнє значення
+console.log(processArray([2, 4, 6], areAllEven)); // Виведе true
+console.log(processArray([2, 4, 7], (arr) => isAnyGreaterThan(arr, 5))); // Виведе true
+
+// 2 additional task
+
+const combineNumbers = (a, b, callback) => {
+  return callback(a, b);
 };
 
-console.log(slugify("Top 10 benefits of React framework"));
+const powNumbers = (a, b) => Math.pow(a, b);
+const divisionNumbers = (a, b) => a / b;
+
+console.log(combineNumbers(2, 6, powNumbers));
+console.log(combineNumbers(12, 2, divisionNumbers));
