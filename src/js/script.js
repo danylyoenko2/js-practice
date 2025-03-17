@@ -1,29 +1,38 @@
 // additional task
+const cart = {
+  items: [],
 
-const processArray = (arr, callback) => {
-  const proccess = callback(arr);
-  return proccess;
+  getItems() {
+    return this.items;
+  },
+
+  add(product) {
+    this.items.push(product);
+  },
+
+  remove(productName) {
+    this.items = this.items.filter((item) => item.name !== productName);
+  },
+
+  clear() {
+    this.items = [];
+  },
+
+  countTotalPrice() {
+    return this.items.reduce((total, item) => total + item.price, 0);
+  },
 };
 
-const getAverage = (arr) =>
-  arr.reduce((acc, curr) => acc + curr, 0) / arr.length;
+cart.add({ name: "🍎", price: 50 });
+cart.add({ name: "🍇", price: 70 });
+cart.add({ name: "🍋", price: 60 });
+cart.add({ name: "🍓", price: 110 });
+console.log(cart.getItems());
 
-const areAllEven = (arr) => arr.every((num) => num % 2 === 0);
+console.log(cart.countTotalPrice());
 
-const isAnyGreaterThan = (arr, value) => arr.some((num) => num > value);
+cart.remove("🍇");
+console.log(cart.getItems());
 
-console.log(processArray([2, 4, 6], getAverage)); // Виведе середнє значення
-console.log(processArray([2, 4, 6], areAllEven)); // Виведе true
-console.log(processArray([2, 4, 7], (arr) => isAnyGreaterThan(arr, 5))); // Виведе true
-
-// 2 additional task
-
-const combineNumbers = (a, b, callback) => {
-  return callback(a, b);
-};
-
-const powNumbers = (a, b) => Math.pow(a, b);
-const divisionNumbers = (a, b) => a / b;
-
-console.log(combineNumbers(2, 6, powNumbers));
-console.log(combineNumbers(12, 2, divisionNumbers));
+cart.clear();
+console.log(cart.getItems());
